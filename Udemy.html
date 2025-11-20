@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udemy</title>
+    <link rel="stylesheet" href="Udemy.css">
+</head>
+<body>
+     <header class="header">
+        <div class="logo">udemy</div>
+        <nav class="nav">
+            <a href="#">Explore</a>
+            <input type="text" placeholder="Search for anything" class="search-bar">
+            <a href="#">Plans & Pricing</a>
+            <a href="#">Udemy Business</a>
+            <a href="#">Teach on Udemy</a>
+            <button class="cart">🛒</button>
+            <button class="login">Log in</button>
+            <button class="signup">Sign up</button>
+            <button class="globe">🌐</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="./Images/intro.jpg" alt="Background Image" class="hero-bg">
+        <div class="hero-content">
+            <h1>Learn more, spend less — Black Friday Sale from E£279.99</h1>
+            <p>Sitewide savings on thousands of courses. Ends Nov 28.</p>
+        </div>
+    </section>
+
+
+     <section class="skills-section">
+        <div class="skills-grid">
+            <!-- Left Content Block -->
+            <div class="content-block">
+                <h2 class="section-title">
+                    Learn essential career and life skills
+                </h2>
+                <p class="section-description">
+                    Our platform helps you build in-demand skills fast and advance your career in a changing job market.
+                </p>
+            </div>
+
+            <!-- Right Carousel Block -->
+            <div class="carousel-wrapper">
+                <!-- Cards Container -->
+                <div id="carousel-container" class="card-carousel">
+                    <!-- Card 1: Generative AI -->
+                    <div class="skill-card">
+                        <img src="https://placehold.co/300x200/4c00ff/ffffff?text=AI+Illustration" alt="Generative AI" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Generative AI</h3>
+                            <p class="card-description">17M+ learners</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: IT Certifications -->
+                    <div class="skill-card">
+                        <img src="https://placehold.co/300x200/008000/ffffff?text=IT+Certs" alt="IT Certifications" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">IT Certifications</h3>
+                            <p class="card-description">14M+ learners</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: Data Science -->
+                    <div class="skill-card">
+                        <img src="https://placehold.co/300x200/ff6b00/ffffff?text=Data+Science" alt="Data Science" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Data Science</h3>
+                            <p class="card-description">8.1M+ learners</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4: Web Development -->
+                    <div class="skill-card">
+                        <img src="https://placehold.co/300x200/007bff/ffffff?text=Web+Dev" alt="Web Development" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Web Development</h3>
+                            <p class="card-description">12M+ learners</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 5: Digital Marketing -->
+                    <div class="skill-card">
+                        <img src="https://placehold.co/300x200/ff4081/ffffff?text=Marketing" alt="Digital Marketing" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Digital Marketing</h3>
+                            <p class="card-description">9.5M+ learners</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <div class="carousel-controls">
+                    <!-- Left Arrow Button -->
+                    <button id="prev-button" aria-label="Previous card" class="nav-button">
+                        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Dots (Generated by JS) -->
+                    <div id="carousel-dots" class="dot-indicators">
+                        <!-- Dots will be injected here by JavaScript -->
+                    </div>
+
+                    <!-- Right Arrow Button -->
+                    <button id="next-button" aria-label="Next card" class="nav-button">
+                        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <div class="container">
+        <!-- Left Content Section -->
+        <div class="content-section">
+            <h1 class="main-title">Reimagine your career in the <span class="highlight">AI era</span></h1>
+            <p class="description">Future-proof your skills with Personal Plan. Get access to a variety of fresh content from real-world experts.</p>
+            
+            <ul class="features-list">
+                <li class="feature-item">
+                    <div class="checkbox checked">✓</div>
+                    <span>Learn AI and more</span>
+                </li>
+                <li class="feature-item">
+                    <div class="checkbox unchecked"></div>
+                    <span>Prep for a certification</span>
+                </li>
+                <li class="feature-item">
+                    <div class="checkbox checked">✓</div>
+                    <span>Practice with AI coaching</span>
+                </li>
+                <li class="feature-item">
+                    <div class="checkbox unchecked"></div>
+                    <span>Advance your career</span>
+                </li>
+            </ul>
+            
+            <a href="#" class="cta-button">Learn more</a>
+            
+            <div class="pricing">
+                <span class="price">€204.00</span>
+                <span class="period">/month</span>
+            </div>
+        </div>
+        
+        <!-- Right Image Section -->
+        <div class="image-section">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                 alt="AI Technology" 
+                 class="ai-image">
+        </div>
+    </div>
+     <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="main-title">Skills to transform your career and life</h1>
+                <p class="header-description">From critical skills to technical topics, our platform supports your professional development.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Skills Filter Section -->
+    <section class="skills-filter">
+        <div class="container">
+            <div class="filter-container">
+                <button class="filter-btn active">Artificial Intelligence (AI)</button>
+                <button class="filter-btn">Python</button>
+                <button class="filter-btn">Microsoft Excel</button>
+                <button class="filter-btn">AI Agents & Agentic AI</button>
+                <button class="filter-btn">Digital Marketing</button>
+                <button class="filter-btn">Amazon AWS</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+        <div class="container">
+            
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="AWS Course" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">Ultimate AWS Certified Cloud Practitioner CLF-C02 2025</h3>
+                        <p class="course-instructor">Stephane Maarek | AWS Certified Cloud Practitioner, Solutions Architect, Developer</p>
+                        <div class="course-meta">
+                            <span class="bestseller">Bestseller</span>
+                            <span class="rating">
+                                <span class="star">★</span> 4.7
+                            </span>
+                            <span class="students">(271,013 ratings)</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="current-price">€299.99</span>
+                            <span class="original-price">€979.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="AWS Course" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">AWS From Zero to Hero - The Complete Guide</h3>
+                        <p class="course-instructor">Memi Lavi</p>
+                        <div class="course-meta">
+                            <span class="rating">
+                                <span class="star">★</span> 4.8
+                            </span>
+                            <span class="students">(71 ratings)</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="current-price">€259.99</span>
+                            <span class="original-price">€949.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="AWS Course" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">AWS Certified Solutions Architect Associate (SAA-C03) Course</h3>
+                        <p class="course-instructor">Neal Davis | AWS Certified Solutions Architect & Developer</p>
+                        <div class="course-meta">
+                            <span class="premium">Premium</span>
+                            <span class="rating">
+                                <span class="star">★</span> 4.6
+                            </span>
+                            <span class="students">(21,972 ratings)</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="current-price">€279.99</span>
+                            <span class="original-price">€949.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="AWS Course" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">AWS Essentials: A Complete Beginner's Guide</h3>
+                        <p class="course-instructor">Learnify IT</p>
+                        <div class="course-meta">
+                            <span class="rating">
+                                <span class="star">★</span> 4.4
+                            </span>
+                            <span class="students">(559 ratings)</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="current-price">€259.99</span>
+                            <span class="original-price">€949.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        <button class="show-all-btn">Show all Amazon AWS courses</button>
+    </section>
+     <section class="trusted-companies-section">
+        <div class="container">
+            <div class="trusted-content">
+                <h2 class="trusted-title">
+                    Trusted by over 17,000 companies and millions of learners around the world
+                </h2>
+                
+                <div class="companies-logos">
+                    <div class="logo-item">
+                        <span class="logo-text">STANSPIRED</span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="logo-text">vimeo</span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="logo-text">R&G</span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="logo-text">Hewlett Packard Enterprise</span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="logo-text">cift</span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="logo-text">ERICSSON</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<script src="./Udemy.js"></script>  
+</body>
+</html>
