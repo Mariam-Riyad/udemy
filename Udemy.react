@@ -1,0 +1,297 @@
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  // State for search functionality
+  const [searchQuery, setSearchQuery] = useState('');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeFilter, setActiveFilter] = useState('Artificial Intelligence (AI)');
+
+  // Data for the website
+  const skills = [
+    { id: 1, title: 'Generative AI', learners: '17M+ learners', image: 'https://placehold.co/300x200/4c00ff/ffffff?text=AI+Illustration' },
+    { id: 2, title: 'IT Certifications', learners: '14M+ learners', image: 'https://placehold.co/300x200/008000/ffffff?text=IT+Certs' },
+    { id: 3, title: 'Data Science', learners: '8.1M+ learners', image: 'https://placehold.co/300x200/ff6b00/ffffff?text=Data+Science' },
+    { id: 4, title: 'Web Development', learners: '12M+ learners', image: 'https://placehold.co/300x200/007bff/ffffff?text=Web+Dev' },
+  ];
+
+  const filters = [
+    'Artificial Intelligence (AI)',
+    'Python',
+    'Microsoft Excel',
+    'AI Agents & Agentic AI',
+    'Digital Marketing',
+    'Amazon AWS'
+  ];
+
+  const courses = [
+    {
+      id: 1,
+      title: 'Ultimate AWS Certified Cloud Practitioner CLF-C02 2025',
+      instructor: 'Stephane Maarek',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+      rating: 4.7,
+      students: '271,013',
+      currentPrice: '€299.99',
+      originalPrice: '€979.99',
+      bestseller: true
+    },
+    {
+      id: 2,
+      title: 'AWS From Zero to Hero - The Complete Guide',
+      instructor: 'Memi Lavi',
+      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+      rating: 4.8,
+      students: '71',
+      currentPrice: '€259.99',
+      originalPrice: '€949.99',
+      bestseller: false
+    }
+  ];
+
+  const companies = [
+    'STANSPIRED', 'vimeo', 'R&G', 'Hewlett Packard Enterprise', 'cift', 'ERICSSON'
+  ];
+
+  // Event handlers
+  const handleSearch = (e) => {
+    if (e.key === 'Enter' && searchQuery.trim()) {
+      alert(`Searching for: ${searchQuery}`);
+    }
+  };
+
+  const handleLogin = () => {
+    alert('Login button clicked');
+  };
+
+  const handleSignup = () => {
+    alert('Signup button clicked');
+  };
+
+  const nextSlide = () => {
+    if (currentSlide < skills.length - 1) {
+      setCurrentSlide(currentSlide + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
+  };
+
+  const handleShowAll = () => {
+    alert('Showing all Amazon AWS courses!');
+  };
+
+  return (
+    <div className="App">
+      {/* Header */}
+      <header className="header">
+        <div className="logo">udemy</div>
+        <nav className="nav">
+          <a href="#">Explore</a>
+          <input 
+            type="text" 
+            placeholder="Search for anything" 
+            className="search-bar"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyPress={handleSearch}
+          />
+          <a href="#">Plans & Pricing</a>
+          <a href="#">Udemy Business</a>
+          <a href="#">Teach on Udemy</a>
+          <button className="cart">🛒</button>
+          <button className="login" onClick={handleLogin}>Log in</button>
+          <button className="signup" onClick={handleSignup}>Sign up</button>
+          <button className="globe">🌐</button>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="hero">
+        <img src="./Images/intro.jpg" alt="Background Image" className="hero-bg" />
+        <div className="hero-content">
+          <h1>Learn more, spend less — Black Friday Sale from E£279.99</h1>
+          <p>Sitewide savings on thousands of courses. Ends Nov 28.</p>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="skills-section">
+        <div className="skills-grid">
+          <div className="content-block">
+            <h2 className="section-title">Learn essential career and life skills</h2>
+            <p className="section-description">
+              Our platform helps you build in-demand skills fast and advance your career in a changing job market.
+            </p>
+          </div>
+
+          <div className="carousel-wrapper">
+            <div className="card-carousel">
+              {skills.map((skill) => (
+                <div key={skill.id} className="skill-card">
+                  <img src={skill.image} alt={skill.title} className="card-image" />
+                  <div className="card-content">
+                    <h3 className="card-title">{skill.title}</h3>
+                    <p className="card-description">{skill.learners}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="carousel-controls">
+              <button className="nav-button" onClick={prevSlide} disabled={currentSlide === 0}>
+                <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+
+              <div className="dot-indicators">
+                {skills.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`dot ${index === currentSlide ? 'active' : ''}`}
+                    onClick={() => setCurrentSlide(index)}
+                  />
+                ))}
+              </div>
+
+              <button className="nav-button" onClick={nextSlide} disabled={currentSlide === skills.length - 1}>
+                <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Section */}
+      <div className="container">
+        <div className="content-section">
+          <h1 className="main-title">Reimagine your career in the <span className="highlight">AI era</span></h1>
+          <p className="description">
+            Future-proof your skills with Personal Plan. Get access to a variety of fresh content from real-world experts.
+          </p>
+          
+          <ul className="features-list">
+            <li className="feature-item">
+              <div className="checkbox checked">✓</div>
+              <span>Learn AI and more</span>
+            </li>
+            <li className="feature-item">
+              <div className="checkbox unchecked"></div>
+              <span>Prep for a certification</span>
+            </li>
+            <li className="feature-item">
+              <div className="checkbox checked">✓</div>
+              <span>Practice with AI coaching</span>
+            </li>
+            <li className="feature-item">
+              <div className="checkbox unchecked"></div>
+              <span>Advance your career</span>
+            </li>
+          </ul>
+          
+          <a href="#" className="cta-button">Learn more</a>
+          
+          <div className="pricing">
+            <span className="price">€204.00</span>
+            <span className="period">/month</span>
+          </div>
+        </div>
+        
+        <div className="image-section">
+          <img 
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+            alt="AI Technology" 
+            className="ai-image" 
+          />
+        </div>
+      </div>
+
+      {/* Courses Header */}
+      <header className="header">
+        <div className="container">
+          <div className="header-content">
+            <h1 className="main-title">Skills to transform your career and life</h1>
+            <p className="header-description">
+              From critical skills to technical topics, our platform supports your professional development.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      {/* Skills Filter */}
+      <section className="skills-filter">
+        <div className="container">
+          <div className="filter-container">
+            {filters.map((filter) => (
+              <button
+                key={filter}
+                className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Courses Section */}
+      <section className="courses-section">
+        <div className="container">
+          <div className="courses-grid">
+            {courses.map((course) => (
+              <div key={course.id} className="course-card">
+                <img src={course.image} alt={course.title} className="course-image" />
+                <div className="course-content">
+                  <h3 className="course-title">{course.title}</h3>
+                  <p className="course-instructor">{course.instructor}</p>
+                  <div className="course-meta">
+                    {course.bestseller && <span className="bestseller">Bestseller</span>}
+                    <span className="rating">
+                      <span className="star">★</span> {course.rating}
+                    </span>
+                    <span className="students">({course.students} ratings)</span>
+                  </div>
+                  <div className="course-pricing">
+                    <span className="current-price">{course.currentPrice}</span>
+                    <span className="original-price">{course.originalPrice}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <button className="show-all-btn" onClick={handleShowAll}>
+          Show all Amazon AWS courses
+        </button>
+      </section>
+
+      {/* Trusted Companies */}
+      <section className="trusted-companies-section">
+        <div className="container">
+          <div className="trusted-content">
+            <h2 className="trusted-title">
+              Trusted by over 17,000 companies and millions of learners around the world
+            </h2>
+            
+            <div className="companies-logos">
+              {companies.map((company, index) => (
+                <div key={index} className="logo-item">
+                  <span className="logo-text">{company}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default App;
